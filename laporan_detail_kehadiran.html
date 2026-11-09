@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 
 <!DOCTYPE html>
 
@@ -95,7 +96,9 @@ h1 span{color:#0798d6}
 .completion-box p{margin:0}
 .footer{margin-top:18px;padding:16px 20px 8px;text-align:center;color:#748593;font-size:12px;line-height:1.6}
 .footer p{margin:0}.footer p+p{margin-top:3px}
-.back-top{position:fixed;right:20px;bottom:20px;z-index:10;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:50%;background:#078ff0;box-shadow:0 6px 20px rgba(7,143,240,.28);color:#fff;font-size:22px;cursor:pointer}
+.back-top{position:fixed;right:20px;bottom:20px;z-index:10;width:44px;height:44px;display:grid;place-items:center;border:0;border-radius:50%;background:#078ff0;box-shadow:0 6px 20px rgba(7,143,240,.28);color:#fff;font-size:22px;cursor:pointer;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .2s ease,visibility .2s ease,transform .2s ease}
+.back-top.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.back-top{transition:none}}
 .lightbox{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(10,20,35,.86)}
 .lightbox.open{display:flex}.lightbox img{max-width:96vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:8px;background:#fff}
 .lightbox-close{position:absolute;top:15px;right:15px;border:0;border-radius:999px;padding:9px 13px;background:#fff;color:#1d2937;font-weight:750;cursor:pointer}
@@ -282,10 +285,23 @@ h1 span{color:#0798d6}
 </section>
 <footer class="footer"><p>Fingerspot.io · Panduan Laporan Detail Kehadiran</p><p>Tampilan menu dan data dapat berbeda sesuai hak akses serta pengaturan akun.</p></footer>
 </main>
-<button aria-label="Kembali ke atas" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Kembali ke atas" type="button">↑</button>
+<button aria-hidden="true" aria-label="Kembali ke atas" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" tabindex="-1" title="Kembali ke atas" type="button">↑</button>
 <div aria-label="Perbesar gambar" aria-modal="true" class="lightbox" id="lightbox" role="dialog"><button class="lightbox-close" id="lightbox-close" type="button">Tutup ✕</button><img alt="Gambar diperbesar" id="lightbox-image"/></div>
 <script>
 (()=>{const box=document.getElementById('lightbox'),viewer=document.getElementById('lightbox-image'),closeButton=document.getElementById('lightbox-close');document.querySelectorAll('img.zoomable').forEach(img=>img.addEventListener('click',()=>{viewer.src=img.src;viewer.alt=img.alt||'Gambar diperbesar';box.classList.add('open');document.body.style.overflow='hidden';closeButton.focus();}));const close=()=>{box.classList.remove('open');viewer.removeAttribute('src');document.body.style.overflow='';};closeButton.addEventListener('click',close);box.addEventListener('click',e=>{if(e.target===box)close();});document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});})();
 </script>
-</body>
+<script>(()=>{
+ const button=document.querySelector('.back-top');
+ if(!button)return;
+ const threshold=160;
+ const update=()=>{
+   const visible=window.scrollY>threshold;
+   button.classList.toggle('is-visible',visible);
+   button.setAttribute('aria-hidden',String(!visible));
+   button.tabIndex=visible?0:-1;
+ };
+ window.addEventListener('scroll',update,{passive:true});
+ window.addEventListener('pageshow',update);
+ update();
+})();</script></body>
 </html>
