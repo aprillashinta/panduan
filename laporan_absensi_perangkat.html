@@ -32,6 +32,9 @@
     .brand-title { margin: 0; color: #253445; font-size: 14px; line-height: 1.35; font-weight: 750; white-space: nowrap; }
     .print-button { border: 0; border-radius: 13px; background: #080f24; color: white; padding: 11px 16px; font-size: 12px; font-weight: 750; cursor: pointer; white-space: nowrap; box-shadow: 0 5px 12px rgba(8,15,36,.12); }
     .print-button:hover { background: #142445; }
+    .back-button { display: inline-flex; align-items: center; border-radius: 13px; background: #eaf7fd; color: var(--brand-dark); padding: 11px 16px; font-size: 12px; font-weight: 750; text-decoration: none; white-space: nowrap; }
+    .back-button:hover { background: #d9f0fc; }
+    .topbar-actions { display: flex; align-items: center; gap: 10px; }
     main { width: min(1240px, 100%); margin: 0 auto; padding: 28px 24px 62px; }
     .hero { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(360px, .96fr); overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(135deg,#fff 0%,#f8fcff 100%); box-shadow: var(--shadow); }
     .hero-copy { padding: clamp(24px, 4vw, 46px); }
@@ -118,6 +121,7 @@
       .brand-divider, .brand-title { display: none; }
       .brand-logo { width: 124px; }
       .print-button { padding: 9px 11px; font-size: 11px; border-radius: 10px; }
+      .back-button { padding: 9px 11px; font-size: 11px; border-radius: 10px; }
       main { padding: 14px 12px 44px; }
       .hero { border-radius: 18px; }
       .hero-copy, .hero-side { padding: 22px 18px; }
@@ -149,7 +153,7 @@
       @page { size: A4; margin: 10mm; }
       body { background: #fff; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
       .topbar { position: static; }
-      .print-button, .back-top, .lightbox, .overview { display: none !important; }
+      .print-button, .back-button, .back-top, .lightbox, .overview { display: none !important; }
       main { width: 100%; max-width: none; padding: 12px 0; }
       .hero, .step-card { box-shadow: none; break-inside: avoid; border-color: #d9e2ea; }
       .hero { grid-template-columns: 1fr 1fr; }
@@ -243,7 +247,7 @@
 <span aria-hidden="true" class="brand-divider"></span>
 <p class="brand-title">Panduan Melihat Data Absensi dari Perangkat</p>
 </div>
-<button class="print-button" onclick="window.print()" type="button">Cetak / Simpan PDF</button>
+<div class="topbar-actions"><a class="back-button" href="index.html" aria-label="Kembali ke halaman index">Kembali</a><button class="print-button" onclick="window.print()" type="button">Cetak / Simpan PDF</button></div>
 </div>
 </header>
 <main>

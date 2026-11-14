@@ -301,6 +301,17 @@ footer {padding:18px 20px 10px;text-align:center;color:#778895;font-size:11px;li
       .hero-copy .metric:last-child { border-bottom: 0; }
     }
 </style>
+<style>
+.back-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 0; border-radius: 12px; background: #eaf7fd; color: #0879b9; padding: 10px 15px; font-family: inherit; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.back-button:hover { background: #d9f0fc; }
+.topbar-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.back-button--floating { position: fixed; top: 16px; right: 24px; z-index: 90; }
+@media (max-width: 700px) {
+  .back-button { padding: 9px 11px; font-size: 11px; }
+  .back-button--floating { top: 12px; right: 12px; }
+}
+@media print { .back-button { display: none !important; } }
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -310,7 +321,7 @@ footer {padding:18px 20px 10px;text-align:center;color:#778895;font-size:11px;li
 <span aria-hidden="true" class="brand-divider"></span>
 <p class="brand-title">Panduan Membuat Jadwal Kerja</p>
 </div>
-<button class="print-button" onclick="window.print()" type="button">Cetak / Simpan PDF</button>
+<div class="topbar-actions"><a class="back-button" href="index.html" aria-label="Kembali ke halaman index">Kembali</a><button class="print-button" onclick="window.print()" type="button">Cetak / Simpan PDF</button></div>
 </div>
 </header>
 <main><section aria-labelledby="cover-title" class="hero">

@@ -76,8 +76,20 @@ h1 span{color:var(--blue)}
 .eyebrow{font-size:10px;color:var(--blue-dark);font-weight:850;letter-spacing:.17em;text-transform:uppercase}
 @media(max-width:600px){.brand-mark{margin-bottom:13px}.brand-mark img{width:188px;max-width:78vw}}
 </style>
+<style>
+.back-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 0; border-radius: 12px; background: #eaf7fd; color: #0879b9; padding: 10px 15px; font-family: inherit; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.back-button:hover { background: #d9f0fc; }
+.topbar-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.back-button--floating { position: fixed; top: 16px; right: 24px; z-index: 90; }
+@media (max-width: 700px) {
+  .back-button { padding: 9px 11px; font-size: 11px; }
+  .back-button--floating { top: 12px; right: 12px; }
+}
+@media print { .back-button { display: none !important; } }
+</style>
 </head>
 <body>
+<a class="back-button back-button--floating" href="index.html" aria-label="Kembali ke halaman index">Kembali</a>
 <svg aria-hidden="true" focusable="false" height="0" style="position:absolute;overflow:hidden" width="0">
 <symbol id="i-user-round-plus" viewbox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M19 8v6m-3-3h6"></path></symbol>
 <symbol id="i-calendar-clock" viewbox="0 0 24 24"><rect height="17" rx="2" width="18" x="3" y="4"></rect><path d="M16 2v4M8 2v4M3 9h18"></path><circle cx="15" cy="15" r="3"></circle><path d="M15 13.5V15l1 1"></path></symbol>

@@ -1076,9 +1076,21 @@
       }
     }
   </style>
+<style>
+.back-button { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; border: 0; border-radius: 12px; background: #eaf7fd; color: #0879b9; padding: 10px 15px; font-family: inherit; font-size: 12px; font-weight: 750; line-height: 1.2; text-decoration: none; white-space: nowrap; }
+.back-button:hover { background: #d9f0fc; }
+.topbar-actions { display: flex; align-items: center; gap: 10px; flex: 0 0 auto; }
+.back-button--floating { position: fixed; top: 16px; right: 24px; z-index: 90; }
+@media (max-width: 700px) {
+  .back-button { padding: 9px 11px; font-size: 11px; }
+  .back-button--floating { top: 12px; right: 12px; }
+}
+@media print { .back-button { display: none !important; } }
+</style>
 </head>
 
 <body>
+<a class="back-button back-button--floating" href="index.html" aria-label="Kembali ke halaman index">Kembali</a>
   <section aria-labelledby="cover-title" class="cover-hero" id="top">
     <div class="cover-inner">
       <div class="cover-brand"><img alt="Fingerspot.io" class="cover-logo" decoding="async" fetchpriority="high"
