@@ -1067,6 +1067,143 @@
       }
     }
   </style>
+  <style>
+:root {
+  --brand: #0b8ff3;
+  --brand-dark: #0878b0;
+  --ink: #17212b;
+  --muted: #5f6b76;
+  --line: #dde4ea;
+  --bg: #f5f7f9;
+  --pale: #eaf6fc;
+  --panel: #fff;
+  --shadow: 0 8px 26px rgba(15, 23, 42, .055);
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--brand-dark);
+}
+
+.topbar,
+.header,
+footer,
+.footer {
+  background: #fff;
+  border-color: var(--line);
+}
+
+.hero,
+.print-page,
+.quick-nav,
+.nav-card,
+.progress-card,
+.flow-choice,
+.flow-panel,
+.end-note,
+.completion-panel,
+.finish-panel,
+.section-card,
+.intro-card,
+.info-panel,
+.legend-panel,
+.prep-card,
+.quick-prep-card,
+.type-card,
+.type-panels,
+.branch-panel,
+.focus-panel,
+.search-panel,
+.flow-voucher-panel,
+.account-path-panel,
+.method-guidance-card,
+.voucher-guidance-card,
+.guide-card,
+.cover-art-card,
+.device-card,
+.step-card:not(.is-done) {
+  border-color: var(--line);
+  box-shadow: var(--shadow);
+}
+
+.hero,
+.print-page,
+.quick-nav,
+.nav-card,
+.progress-card,
+.flow-choice,
+.flow-panel,
+.end-note,
+.completion-panel,
+.finish-panel,
+.section-card,
+.intro-card,
+.info-panel,
+.legend-panel,
+.prep-card,
+.quick-prep-card,
+.type-card,
+.type-panels,
+.branch-panel,
+.focus-panel,
+.search-panel,
+.flow-voucher-panel,
+.account-path-panel,
+.method-guidance-card,
+.voucher-guidance-card,
+.guide-card,
+.cover-art-card,
+.device-card,
+.step-card:not(.is-done) {
+  background-color: #fff;
+}
+
+.cover-copy h1,
+.guide-title {
+  color: var(--ink);
+}
+
+.step-number,
+.step-badge {
+  background-color: var(--brand);
+}
+
+.print-button,
+.small-button {
+  background-color: var(--brand);
+}
+
+.print-button:hover,
+.small-button:hover {
+  background-color: var(--brand-dark);
+}
+
+.flow-tab[aria-selected="true"],
+.filter.active,
+.filter:hover {
+  border-color: #a9d8f0;
+  background-color: var(--pale);
+  color: var(--brand-dark);
+}
+
+.screen-shell,
+.shot {
+  border-color: var(--line);
+  background-color: #f8fafc;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+}
+
+  </style>
 </head>
 
 <body>
