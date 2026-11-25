@@ -92,7 +92,7 @@
     }
 
     .cover-inner {
-      width: min(1200px, calc(100% - 40px));
+      width: min(1104px, calc(100% - 48px));
       margin: 0 auto;
       padding: 34px 0 46px;
     }
@@ -238,7 +238,7 @@
 
     /* ===== MAIN ===== */
     .page-shell {
-      width: min(1040px, calc(100% - 40px));
+      width: min(1104px, calc(100% - 48px));
       margin: 0 auto;
       padding: 36px 0 56px;
     }
@@ -514,7 +514,7 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 720px) {
       .cover-inner {
-        width: calc(100% - 32px);
+        width: calc(100% - 24px);
         padding: 18px 0 32px;
       }
 
@@ -563,7 +563,7 @@
       }
 
       .page-shell {
-        width: calc(100% - 28px);
+        width: calc(100% - 24px);
         padding: 28px 0 44px;
       }
 
@@ -631,7 +631,7 @@
       }
 
       .page-shell {
-        width: calc(100% - 20px);
+        width: calc(100% - 24px);
       }
     }
 
@@ -664,7 +664,7 @@
 
     .cover-inner,
     .page-shell {
-      width: min(1040px, calc(100% - 48px));
+      width: min(1104px, calc(100% - 48px));
     }
 
     .guide-row {
@@ -707,7 +707,7 @@
 
       .cover-inner,
       .page-shell {
-        width: calc(100% - 56px);
+        width: calc(100% - 48px);
       }
 
       .cover-inner {
@@ -731,7 +731,7 @@
 
       .cover-inner,
       .page-shell {
-        width: calc(100% - 32px);
+        width: calc(100% - 24px);
       }
 
       .cover-inner {
@@ -895,7 +895,7 @@
 
       .cover-inner,
       .page-shell {
-        width: calc(100% - 28px);
+        width: calc(100% - 24px);
       }
 
       .cover-inner {
@@ -1727,6 +1727,232 @@
     @media print {
       .back-button {
         display: none !important;
+      }
+    }
+
+    :root {
+      --blue: #0b8ff3;
+      --blue-deep: #0879b9;
+      --blue-soft: #eaf5fe;
+      --ink: #17212b;
+      --muted: #5f6b76;
+      --muted-2: #7b8792;
+      --line: #dde4ea;
+      --page: #f5f7f9;
+      --white: #fff;
+      --shadow: 0 8px 26px rgba(15, 23, 42, 0.055);
+      --shadow-hover: 0 8px 26px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      background: var(--page);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .cover-hero {
+      overflow: visible;
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .cover-hero::before,
+    .cover-hero::after {
+      display: none;
+    }
+
+    .cover-inner {
+      width: min(1104px, calc(100% - 48px));
+      margin: 24px auto 0;
+      padding: clamp(24px, 4vw, 40px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cover-eyebrow {
+      margin: 0 0 12px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: #1976bd;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+    }
+
+    .cover-hero h1 {
+      max-width: 780px;
+      color: #15202a;
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 750;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+    }
+
+    .cover-hero h1 span {
+      color: var(--blue);
+    }
+
+    .cover-description {
+      max-width: 690px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .cover-actions {
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .cover-button {
+      min-height: 42px;
+      padding: 0 17px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .cover-button-primary {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 5px 14px rgba(11, 143, 243, 0.18);
+    }
+
+    .cover-button-primary:hover {
+      background: #087fe0;
+      box-shadow: 0 8px 18px rgba(11, 143, 243, 0.22);
+    }
+
+    .cover-button-secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: #27313b;
+    }
+
+    .cover-button-secondary:hover {
+      background: #f6f8fa;
+    }
+
+    .page-shell {
+      width: min(1104px, calc(100% - 48px));
+      padding: 24px 0 64px;
+    }
+
+    .search-panel {
+      padding: 16px;
+      border-color: var(--line);
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.045);
+    }
+
+    .search-input {
+      border-color: var(--line);
+      border-radius: 10px;
+      background: #f8fafc;
+      color: var(--ink);
+    }
+
+    .search-input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(11, 143, 243, 0.12);
+    }
+
+    .filter-chip {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .filter-chip:hover {
+      border-color: #93c5fd;
+      color: var(--blue);
+    }
+
+    .filter-chip.active {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .guide-row {
+      border-color: var(--line);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.025);
+    }
+
+    .guide-row:hover {
+      border-color: #c5d9ea;
+      background: #fff;
+      box-shadow: 0 5px 18px rgba(15, 23, 42, 0.055);
+      transform: translateY(-1px);
+    }
+
+    .row-number {
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .row-main strong {
+      color: #27313b;
+    }
+
+    .row-description {
+      color: var(--muted);
+    }
+
+    .group-count {
+      border-radius: 8px;
+      background: #f1f5f8;
+      color: #64707c;
+    }
+
+    .empty-state {
+      border-color: var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .site-footer {
+      border-top-color: var(--line);
+      color: var(--muted-2);
+    }
+
+    .footer-brand {
+      color: var(--muted);
+    }
+
+    .cover-button:focus-visible,
+    .filter-chip:focus-visible,
+    .guide-row:focus-visible,
+    .search-input:focus-visible {
+      outline-color: rgba(11, 143, 243, 0.35);
+    }
+
+    @media (max-width: 720px) {
+      .cover-inner,
+      .page-shell {
+        width: calc(100% - 24px);
+      }
+
+      .cover-inner {
+        margin-top: 12px;
+        padding: 20px;
+      }
+
+      .cover-hero h1 {
+        font-size: clamp(28px, 8vw, 38px);
+      }
+
+      .page-shell {
+        padding-top: 18px;
       }
     }
   </style>
